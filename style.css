@@ -1,12 +1,149 @@
-/* Custom styles to complement Tailwind */
+/* Custom styles with space theme */
+body {
+    background: linear-gradient(120deg, #1e1e2f, #4a2c6b, #2a2a72);
+    background-size: 200% 200%;
+    transition: background 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
 nav {
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 nav.scrolled {
-    background-color: rgba(37, 99, 235, 0.9);
+    background-color: rgba(30, 30, 47, 0.95);
 }
 
 section {
-    scroll-margin-top: 80px; /* Adjust for fixed nav height */
+    scroll-margin-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.bg-gray-800 {
+    background-color: #2d2d44;
+}
+
+.bg-gray-700 {
+    background-color: #3b3b5c;
+}
+
+.text-blue-400 {
+    color: #93c5fd;
+}
+
+.text-blue-600 {
+    color: #60a5fa;
+}
+
+a:hover {
+    text-shadow: 0 0 10px rgba(147, 197, 253, 0.5);
+}
+
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(96, 165, 250, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-glow:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    nav {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* New styles for glowing and twinkling text in Hero Section */
+.hero-text {
+    text-shadow: 0 0 10px #93c5fd, 0 0 20px #60a5fa, 0 0 30px #60a5fa;
+    animation: glow 2s ease-in-out infinite alternate, twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #93c5fd, 0 0 20px #60a5fa, 0 0 30px #60a5fa;
+    }
+    to {
+        text-shadow: 0 0 20px #93c5fd, 0 0 30px #60a5fa, 0 0 40px #60a5fa;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Updated styles for mouse hover circle to be white */
+.hover-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3); /* White with transparency */
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Stronger white glow */
+}
+
+#about {
+    transition: transform 0.1s ease-out;
+}
+
+#about:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#about:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    z-index: 10;
+    pointer-events: none;
 }
