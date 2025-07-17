@@ -8,9 +8,14 @@
     <meta name="author" content="Pratham Gupta">
     <title>Pratham Gupta - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator"></div>
+    
     <!-- Navbar -->
     <nav class="fixed w-full bg-gray-900 bg-opacity-90 shadow-lg z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -26,78 +31,176 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="py-32 text-center relative overflow-hidden" style="background-image: url('bg.jpg'); background-size: cover; background-position: center;">
-        <!-- Replace the URL above with your preferred moon and stars image URL or local file path (e.g., 'images/moon-stars.jpg') -->
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex justify-center mb-6">
-                <!-- <img src="path/to/your-photo.jpg" alt="Pratham Gupta" class="w-48 h-48 rounded-full border-4 border-blue-500"> -->
+    <section id="about" class="hero-section" style="background-image: url('bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="floating-element">
+            <i class="fas fa-code text-6xl"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-laptop text-4xl"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-brain text-5xl"></i>
+        </div>
+        
+        <div class="hero-content">
+            <div class="flex justify-center mb-8">
+                <div class="w-48 h-48 rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 p-1 bg-gradient-to-r from-blue-400 to-purple-500">
+                    <img src="pg.jpeg" alt="Pratham Gupta" class="w-full h-full rounded-full object-cover bg-gray-800">
+                </div>
             </div>
-            <h2 class="text-4xl font-bold mb-4 hero-text">Hi, I'm Pratham Gupta</h2>
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto hero-text">A passionate Computer Science student at Nirma University, specializing in Backend Development and AI. I build scalable solutions and explore innovative technologies to solve real-world problems.</p>
-            <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:shadow-lg transition-all duration-300">Get in Touch</a>
+            <h1 class="hero-title">Hi, I'm Pratham Gupta</h1>
+            <p class="hero-subtitle">A passionate Computer Science student at Nirma University, specializing in Backend Development and AI. I build scalable solutions and explore innovative technologies to solve real-world problems.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+                <a href="#projects" class="btn-primary ml-4" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2)); color: #667eea;">View Projects</a>
+            </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
-            <div class="space-y-8">
-                <div class="p-6 bg-gray-700 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold">Backend Developer, Chipbucket Solutions Pvt. Ltd.</h3>
-                    <p class="text-gray-400">Ahmedabad | Jan 2024 - May 2024</p>
-                    <ul class="mt-2 text-gray-300 list-disc list-inside">
-                        <li>Developed RESTful APIs using NestJS, hosted on AWS EC2 with MySQL RDS, supporting 1000+ device interactions monthly.</li>
-                        <li>Contributed to Angular frontend, reducing configuration time by 15%.</li>
-                        <li>Designed modular architecture, improving code maintainability by 20%.</li>
-                        <li>Optimized SQL queries for analytics, improving performance by 35%.</li>
-                        <li>Built Python-based MQTT integration for Lytiva lighting systems, enabling real-time control of 50+ zones.</li>
-                    </ul>
+    <section id="experience" class="section-padding bg-gray-800">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3 class="text-xl font-semibold text-gradient mb-2">Backend Developer</h3>
+                        <h4 class="text-lg font-medium text-blue-300">Chipbucket Solutions Pvt. Ltd.</h4>
+                        <p class="text-gray-400 mb-4">Ahmedabad | Jan 2024 - May 2024</p>
+                        <ul class="text-gray-300 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Developed RESTful APIs using NestJS, hosted on AWS EC2 with MySQL RDS, supporting 1000+ device interactions monthly.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Contributed to Angular frontend, reducing configuration time by 15%.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Designed modular architecture, improving code maintainability by 20%.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Optimized SQL queries for analytics, improving performance by 35%.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Built Python-based MQTT integration for Lytiva lighting systems, enabling real-time control of 50+ zones.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="p-6 bg-gray-700 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold">Web Design and Development Trainee, SOLITS</h3>
-                    <p class="text-gray-400">Gandhidham | May 2024 - July 2024</p>
-                    <ul class="mt-2 text-gray-300 list-disc list-inside">
-                        <li>Designed and developed 5+ responsive websites using PHP, HTML, CSS, and JavaScript.</li>
-                        <li>Managed hosting and deployment, achieving 99.9% uptime.</li>
-                        <li>Collaborated with a 4-member team to deliver projects 10% ahead of schedule.</li>
-                    </ul>
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3 class="text-xl font-semibold text-gradient mb-2">Web Design and Development Trainee</h3>
+                        <h4 class="text-lg font-medium text-blue-300">SOLITS</h4>
+                        <p class="text-gray-400 mb-4">Gandhidham | May 2024 - July 2024</p>
+                        <ul class="text-gray-300 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Designed and developed 5+ responsive websites using PHP, HTML, CSS, and JavaScript.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Managed hosting and deployment, achieving 99.9% uptime.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                Collaborated with a 4-member team to deliver projects 10% ahead of schedule.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <section id="projects" class="section-padding bg-gray-900">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- AI-Powered Book Management System -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2">AI-Powered Book Management System</h3>
-                    <p class="text-gray-400 mb-2">July 2024 - Nov 2024</p>
-                    <p class="text-gray-300 mb-4">Developed a web-based system for 10,000+ book records using React, Node.js, and MongoDB. Integrated ML and transformer models (Hugging Face) for natural language understanding. Built a PDF summarizer, reducing review time by 40%.</p>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">View Project</a>
+                <div class="project-card loading">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-2xl text-gradient mr-3"></i>
+                        <h3 class="text-xl font-semibold project-title">AI-Powered Book Management System</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">July 2024 - Nov 2024</p>
+                    <p class="text-gray-300 mb-6 flex-grow">Developed a web-based system for 10,000+ book records using React, Node.js, and MongoDB. Integrated ML and transformer models (Hugging Face) for natural language understanding. Built a PDF summarizer, reducing review time by 40%.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-sm">ML</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>View Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
+                
                 <!-- Customer Churn Prediction -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2">Customer Churn Prediction</h3>
-                    <p class="text-gray-400 mb-2">Jul 2023 - Dec 2023</p>
-                    <p class="text-gray-300 mb-4">Built a Python-based ML model using Pandas and Scikit-learn, analyzing 50,000+ records to predict churn with 10% higher accuracy. Enabled 15% better customer retention.</p>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">View Project</a>
+                <div class="project-card loading">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-2xl text-gradient mr-3"></i>
+                        <h3 class="text-xl font-semibold project-title">Customer Churn Prediction</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Jul 2023 - Dec 2023</p>
+                    <p class="text-gray-300 mb-6 flex-grow">Built a Python-based ML model using Pandas and Scikit-learn, analyzing 50,000+ records to predict churn with 10% higher accuracy. Enabled 15% better customer retention.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-orange-900 text-orange-300 rounded-full text-sm">Pandas</span>
+                        <span class="px-3 py-1 bg-red-900 text-red-300 rounded-full text-sm">Scikit-learn</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>View Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
+                
                 <!-- Gems e-Commerce Website -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2">Gems e-Commerce Website</h3>
-                    <p class="text-gray-400 mb-2">June 2025 - July 2025</p>
-                    <p class="text-gray-300 mb-4">Developed an e-Commerce website using the MERN stack (MongoDB, Express.js, React, Node.js). Features include product rendering, AI-driven personalized product recommendations, and classification of satellite images into categories. Deployed on MongoDB Atlas for scalable solutions.</p>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">Live Demo</a>
+                <div class="project-card loading">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shopping-cart text-2xl text-gradient mr-3"></i>
+                        <h3 class="text-xl font-semibold project-title">Gems e-Commerce Website</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">June 2025 - July 2025</p>
+                    <p class="text-gray-300 mb-6 flex-grow">Developed an e-Commerce website using the MERN stack. Features include product rendering, AI-driven personalized product recommendations, and classification of satellite images into categories. Deployed on MongoDB Atlas for scalable solutions.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-sm">MERN</span>
+                        <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-sm">AI</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Live Demo</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
+                
                 <!-- E-commerce with Python -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2">E-commerce with Python</h3>
-                    <p class="text-gray-400 mb-2">June 2025 - July 2025</p>
-                    <p class="text-gray-300 mb-4">Built a dynamic e-commerce platform using FastAPI and Python, featuring user authentication, product management, and payment integration with free tools like Razorpay test mode. Deployed on Render for real-time functionality.</p>
+                <div class="project-card loading">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-store text-2xl text-gradient mr-3"></i>
+                        <h3 class="text-xl font-semibold project-title">E-commerce with Python</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">June 2025 - July 2025</p>
+                    <p class="text-gray-300 mb-6 flex-grow">Built a dynamic e-commerce platform using FastAPI and Python, featuring user authentication, product management, and payment integration with free tools like Razorpay test mode. Deployed on Render for real-time functionality.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-sm">FastAPI</span>
+                        <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-sm">Razorpay</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Live Demo</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
                     <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">Live Demo</a>
                 </div>
                 <!-- Satellite Image Classification -->
@@ -112,44 +215,106 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Python</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">C++</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">JavaScript</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">ReactJS</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Node.js</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Django</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Flask</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">NestJS</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">MySQL</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">MongoDB</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Git</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Docker</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Problem Solving</div>
-                <div class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Data Analysis</div>
+    <section id="skills" class="section-padding bg-gray-800">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card loading">
+                    <i class="fab fa-python text-3xl mb-3 text-yellow-400"></i>
+                    <h3 class="font-semibold">Python</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fab fa-js-square text-3xl mb-3 text-yellow-300"></i>
+                    <h3 class="font-semibold">JavaScript</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fab fa-react text-3xl mb-3 text-blue-400"></i>
+                    <h3 class="font-semibold">React.js</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fab fa-node-js text-3xl mb-3 text-green-400"></i>
+                    <h3 class="font-semibold">Node.js</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-database text-3xl mb-3 text-blue-300"></i>
+                    <h3 class="font-semibold">MySQL</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-leaf text-3xl mb-3 text-green-500"></i>
+                    <h3 class="font-semibold">MongoDB</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fab fa-docker text-3xl mb-3 text-blue-500"></i>
+                    <h3 class="font-semibold">Docker</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fab fa-git-alt text-3xl mb-3 text-orange-500"></i>
+                    <h3 class="font-semibold">Git</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-code text-3xl mb-3 text-purple-400"></i>
+                    <h3 class="font-semibold">C++</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-server text-3xl mb-3 text-red-400"></i>
+                    <h3 class="font-semibold">Django</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-fire text-3xl mb-3 text-orange-400"></i>
+                    <h3 class="font-semibold">Flask</h3>
+                </div>
+                <div class="skill-card loading">
+                    <i class="fas fa-brain text-3xl mb-3 text-pink-400"></i>
+                    <h3 class="font-semibold">AI/ML</h3>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
-            <p class="text-gray-300 mb-4">Feel free to reach out via email or connect with me on social platforms!</p>
-            <p class="text-gray-400 mb-6">Email: pratham.harkesh@gmail.com</p>
-            <div class="flex justify-center space-x-4">
-                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">GitHub</a>
-                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">LinkedIn</a>
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-card">
+                <div class="mb-6">
+                    <i class="fas fa-envelope text-4xl text-gradient mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-4 glow-text">Ready to collaborate?</h3>
+                    <p class="text-gray-300 mb-6">Feel free to reach out via email or connect with me on social platforms! Let's build something amazing together.</p>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-at text-blue-400 mr-3"></i>
+                        <span class="text-lg font-medium">pratham.harkesh@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:pratham.harkesh@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-4 text-center text-gray-400">
-        <p>© 2025 Pratham Gupta. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Pratham Gupta. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Built with 💙 and lots of ☕</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
