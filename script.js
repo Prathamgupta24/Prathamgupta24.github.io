@@ -1,3 +1,48 @@
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    mobileMenu.classList.toggle('active');
+    
+    // Change icon
+    const icon = menuBtn.querySelector('i');
+    if (mobileMenu.classList.contains('active')) {
+        icon.className = 'fas fa-times text-xl';
+    } else {
+        icon.className = 'fas fa-bars text-xl';
+    }
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const icon = menuBtn.querySelector('i');
+            
+            mobileMenu.classList.remove('active');
+            icon.className = 'fas fa-bars text-xl';
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const nav = document.querySelector('nav');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (!nav.contains(e.target) && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            const icon = menuBtn.querySelector('i');
+            icon.className = 'fas fa-bars text-xl';
+        }
+    });
+});
+
 // Enhanced Portfolio JavaScript
 
 // Scroll Progress Indicator
@@ -178,12 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-// Mobile menu toggle (for future mobile optimization)
-function toggleMobileMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('active');
-}
 
 // Preloader (optional)
 window.addEventListener('load', () => {

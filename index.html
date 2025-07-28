@@ -20,7 +20,13 @@
     <nav class="fixed w-full bg-gray-900 bg-opacity-90 shadow-lg z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">Pratham Gupta</h1>
-            <ul class="flex space-x-6">
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn md:hidden" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <ul class="mobile-menu flex space-x-6">
                 <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
                 <li><a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
@@ -44,12 +50,16 @@
         
         <div class="hero-content">
             <div class="flex justify-center mb-8">
-                <div class="w-48 h-48 rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 p-1 bg-gradient-to-r from-blue-400 to-purple-500">
-                    <img src="pg.jpeg" alt="Pratham Gupta" class="w-full h-full rounded-full object-cover bg-gray-800">
+                <div class="intro-card">
+                    <div class="intro-shape">
+                        <i class="fas fa-user-tie text-6xl text-gradient"></i>
+                    </div>
+                    <div class="intro-text">
+                        <h1 class="hero-title">Hi, I'm Pratham Gupta</h1>
+                        <p class="hero-subtitle">A passionate Computer Science student at Nirma University, specializing in Backend Development and AI. I build scalable solutions and explore innovative technologies to solve real-world problems.</p>
+                    </div>
                 </div>
             </div>
-            <h1 class="hero-title">Hi, I'm Pratham Gupta</h1>
-            <p class="hero-subtitle">A passionate Computer Science student at Nirma University, specializing in Backend Development and AI. I build scalable solutions and explore innovative technologies to solve real-world problems.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">Get in Touch</a>
                 <a href="#projects" class="btn-primary ml-4" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2)); color: #667eea;">View Projects</a>
@@ -201,18 +211,6 @@
             </div>
         </div>
     </section>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">Live Demo</a>
-                </div>
-                <!-- Satellite Image Classification -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2">Satellite Image Classification</h3>
-                    <p class="text-gray-400 mb-2">June 2025 - July 2025</p>
-                    <p class="text-gray-300 mb-4">Developed a system to classify satellite images into categories using Python and machine learning techniques, integrated into an e-commerce context for enhanced product visualization. Utilized open-source datasets and deployed on a local server.</p>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline">Live Demo</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section-padding bg-gray-800">
@@ -290,13 +288,13 @@
                 </div>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link" title="GitHub">
+                    <a href="https://github.com/prathamgupta24" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/pratham-gupta-b48454274/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-link" title="Twitter">
+                    <a href="#" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a href="mailto:pratham.harkesh@gmail.com" class="social-link" title="Email">
