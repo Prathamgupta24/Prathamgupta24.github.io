@@ -1,0 +1,281 @@
+[
+    {
+        "id": 1,
+        "title": "NutriTracker.ai",
+        "icon": "🥗",
+        "summary": "AI-powered full-stack nutrition tracking app with YOLO food recognition, personalized calorie goals, and comprehensive health metrics.",
+        "tech": ["Python", "FastAPI", "YOLOv8", "Hugging Face", "SQLite", "JavaScript"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A comprehensive full-stack web application that helps users track their nutrition, calculate personalized calorie goals, and analyze meals using AI-powered food recognition. Features include JWT authentication, smart onboarding with BMI/BMR/TDEE calculations, and an admin panel for user management.",
+            "architecture": [
+                { "step": 1, "name": "Frontend (HTML/CSS/JS)", "description": "Mobile-first responsive UI with dark mode support and green theme (#2E7D32)" },
+                { "step": 2, "name": "FastAPI Backend", "description": "RESTful API with JWT authentication, password hashing (bcrypt), and modular router architecture" },
+                { "step": 3, "name": "SQLAlchemy ORM", "description": "Database models for Users, Profiles, Meals with SQLite storage" },
+                { "step": 4, "name": "YOLOv8 Detection", "description": "Object detection model for identifying food items in meal photos" },
+                { "step": 5, "name": "Hugging Face Models", "description": "NLP transformers for nutritional analysis and calorie estimation" },
+                { "step": 6, "name": "Gmail SMTP", "description": "Password recovery with 6-digit verification codes" }
+            ],
+            "schema": [
+                { "name": "Users", "icon": "👤", "description": "UUID, full_name, email, password_hash, is_active, timestamps" },
+                { "name": "UserProfiles", "icon": "📊", "description": "goal, gender, age, height_cm, weight_kg, activity_level, BMI, calories" },
+                { "name": "Meals", "icon": "🍽️", "description": "meal_type, food_items, calories, macros, timestamp" },
+                { "name": "FoodItems", "icon": "🥗", "description": "name, category, calories_per_100g, protein, carbs, fat" },
+                { "name": "DailyLogs", "icon": "📅", "description": "date, total_calories, goal_progress, water_intake" }
+            ],
+            "techStack": {
+                "frontend": ["HTML5", "CSS3", "JavaScript ES6+", "Bootstrap 5", "Font Awesome"],
+                "backend": ["Python 3.9+", "FastAPI", "SQLAlchemy", "Pydantic", "python-jose (JWT)"],
+                "ai_ml": ["YOLOv8", "Hugging Face Transformers", "OpenCV", "PIL"],
+                "database": ["SQLite", "SQLAlchemy ORM"],
+                "devops": ["Gmail SMTP", "Uvicorn", "python-dotenv"]
+            },
+            "features": [
+                "🔐 JWT-based authentication with 'Remember Me' (30-day tokens)",
+                "📧 Password recovery via Gmail SMTP with 6-digit codes",
+                "📊 Smart onboarding: BMI, BMR (Mifflin-St Jeor), TDEE calculations",
+                "🎯 Goal-based calorie adjustment (±500 kcal for loss/gain)",
+                "🤖 YOLO object detection for real-time food recognition",
+                "🧠 Hugging Face models for nutritional analysis",
+                "👨‍💼 Admin panel with user management, search, and pagination",
+                "🌙 Dark mode toggle with persistent preference",
+                "📱 Responsive mobile-first design"
+            ],
+            "apiEndpoints": [
+                { "method": "POST", "endpoint": "/auth/register", "description": "Create new account" },
+                { "method": "POST", "endpoint": "/auth/login", "description": "Login with email/password" },
+                { "method": "POST", "endpoint": "/auth/forgot-password", "description": "Request reset code" },
+                { "method": "POST", "endpoint": "/auth/verify-code", "description": "Verify 6-digit code" },
+                { "method": "GET", "endpoint": "/api/profile/status", "description": "Check onboarding completion" },
+                { "method": "POST", "endpoint": "/api/onboarding/goal", "description": "Save fitness goal" },
+                { "method": "POST", "endpoint": "/api/onboarding/metrics", "description": "Calculate BMI/BMR/TDEE" },
+                { "method": "GET", "endpoint": "/api/profile/full", "description": "Get complete user profile" },
+                { "method": "POST", "endpoint": "/api/meals/analyze", "description": "AI meal analysis" }
+            ],
+            "calculations": {
+                "bmi": "weight (kg) / height (m)² — Categories: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9), Obese (≥30)",
+                "bmr_male": "10×weight + 6.25×height - 5×age + 5 (Mifflin-St Jeor)",
+                "bmr_female": "10×weight + 6.25×height - 5×age - 161 (Mifflin-St Jeor)",
+                "tdee": "BMR × Activity Multiplier (1.2 Sedentary → 1.9 Extra Active)"
+            },
+            "projectStructure": [
+                "backend/ → main.py, database.py, auth.py, onboarding.py, profile.py",
+                "backend/models/ → schemas.py (Pydantic models)",
+                "backend/routers/ → auth_routes.py, onboarding_routes.py, profile_routes.py",
+                "frontend/ → index.html, onboarding.html, dashboard.html, profile.html",
+                "frontend/css/ → base.css, auth.css, onboarding.css, dashboard.css",
+                "frontend/js/ → auth.js, onboarding.js, profile.js",
+                "admin/ → admin_main.py, admin_auth.py, templates/, static/"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "title": "AI Book Management System",
+        "icon": "📚",
+        "summary": "Web-based system managing 10,000+ book records with ML-powered natural language understanding and PDF summarization.",
+        "tech": ["React", "Node.js", "MongoDB", "Hugging Face", "Transformers"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A comprehensive book management system that leverages machine learning and transformer models from Hugging Face for natural language understanding. Features include intelligent search, automated categorization, and a PDF summarizer that reduces review time by 40%.",
+            "architecture": [
+                { "step": 1, "name": "React Frontend", "description": "Modern UI with search, filters, and book management interface" },
+                { "step": 2, "name": "Node.js API", "description": "RESTful backend handling CRUD operations and file uploads" },
+                { "step": 3, "name": "MongoDB Database", "description": "Flexible document storage for 10,000+ book records" },
+                { "step": 4, "name": "Hugging Face Models", "description": "Transformers for NLU, text classification, and summarization" },
+                { "step": 5, "name": "PDF Processing", "description": "Extract and summarize content from uploaded PDFs" }
+            ],
+            "schema": [
+                { "name": "Books", "icon": "📖", "description": "title, author, ISBN, category, description, pdf_url" },
+                { "name": "Categories", "icon": "📁", "description": "ML-generated classifications and tags" },
+                { "name": "Summaries", "icon": "📝", "description": "AI-generated summaries and key points" },
+                { "name": "Users", "icon": "👤", "description": "User accounts and reading history" },
+                { "name": "Reviews", "icon": "⭐", "description": "User reviews and ratings" }
+            ],
+            "techStack": {
+                "frontend": ["React", "Redux", "Material-UI", "Axios"],
+                "backend": ["Node.js", "Express", "Multer"],
+                "ai_ml": ["Hugging Face Transformers", "BERT", "T5", "PyPDF2"],
+                "database": ["MongoDB", "Mongoose ODM"],
+                "devops": ["Docker", "GitHub Actions"]
+            },
+            "features": [
+                "📚 Manage 10,000+ book records with efficient pagination",
+                "🔍 Intelligent search with NLU-powered query understanding",
+                "🤖 Automatic book categorization using ML classifiers",
+                "📄 PDF upload and automatic content extraction",
+                "✂️ AI summarizer reducing review time by 40%",
+                "🏷️ Smart tagging and recommendation system",
+                "📊 Analytics dashboard for reading patterns"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "title": "Customer Churn Prediction",
+        "icon": "📈",
+        "summary": "ML model analyzing 50,000+ records to predict customer churn with 10% higher accuracy, enabling 15% better retention.",
+        "tech": ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Jupyter"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A Python-based machine learning solution that analyzes customer behavior patterns across 50,000+ records to predict churn with significantly higher accuracy than baseline models. The insights enabled a 15% improvement in customer retention strategies.",
+            "architecture": [
+                { "step": 1, "name": "Data Collection", "description": "Aggregate 50,000+ customer records from multiple sources" },
+                { "step": 2, "name": "Data Preprocessing", "description": "Pandas for cleaning, feature engineering, and transformation" },
+                { "step": 3, "name": "Exploratory Analysis", "description": "Statistical analysis and visualization of churn patterns" },
+                { "step": 4, "name": "Model Training", "description": "Scikit-learn classifiers (Random Forest, XGBoost, Logistic Regression)" },
+                { "step": 5, "name": "Model Evaluation", "description": "Cross-validation, ROC-AUC, precision-recall analysis" },
+                { "step": 6, "name": "Deployment", "description": "Model serialization and prediction API" }
+            ],
+            "schema": [
+                { "name": "CustomerData", "icon": "👥", "description": "Demographics, account info, usage patterns" },
+                { "name": "Transactions", "icon": "💳", "description": "Purchase history and frequency" },
+                { "name": "Interactions", "icon": "📞", "description": "Support tickets, complaints, engagement" },
+                { "name": "Predictions", "icon": "🎯", "description": "Churn probability scores and risk tiers" },
+                { "name": "Features", "icon": "🔧", "description": "Engineered features for ML models" }
+            ],
+            "techStack": {
+                "data_processing": ["Python 3.x", "Pandas", "NumPy"],
+                "machine_learning": ["Scikit-learn", "XGBoost", "LightGBM"],
+                "visualization": ["Matplotlib", "Seaborn", "Plotly"],
+                "development": ["Jupyter Notebook", "Git"]
+            },
+            "features": [
+                "📊 Analysis of 50,000+ customer records",
+                "🎯 10% higher prediction accuracy than baseline",
+                "💡 15% improvement in customer retention",
+                "🔬 Feature importance analysis for actionable insights",
+                "📈 Interactive visualizations of churn patterns",
+                "⚡ Real-time prediction scoring API"
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "title": "Gems e-Commerce (MERN)",
+        "icon": "💎",
+        "summary": "Full-stack MERN e-commerce platform with AI-driven recommendations and satellite image classification.",
+        "tech": ["MongoDB", "Express", "React", "Node.js", "AI/ML"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A comprehensive e-commerce website built using the MERN stack, featuring product rendering, AI-driven personalized product recommendations, and satellite image classification. Deployed on MongoDB Atlas for scalable, production-ready solutions.",
+            "architecture": [
+                { "step": 1, "name": "React Frontend", "description": "Dynamic product catalog with responsive design" },
+                { "step": 2, "name": "Express API", "description": "RESTful endpoints for products, cart, orders" },
+                { "step": 3, "name": "Node.js Server", "description": "Business logic and authentication" },
+                { "step": 4, "name": "MongoDB Atlas", "description": "Cloud database for products, users, orders" },
+                { "step": 5, "name": "AI Engine", "description": "Recommendation system and image classification" }
+            ],
+            "schema": [
+                { "name": "Products", "icon": "💎", "description": "Gem catalog with images, prices, categories" },
+                { "name": "Users", "icon": "👤", "description": "Customer accounts and preferences" },
+                { "name": "Orders", "icon": "🛒", "description": "Purchase history and order tracking" },
+                { "name": "Cart", "icon": "🧺", "description": "Shopping cart with real-time updates" },
+                { "name": "Recommendations", "icon": "🎯", "description": "AI-generated product suggestions" }
+            ],
+            "techStack": {
+                "frontend": ["React", "Redux", "Bootstrap", "Axios"],
+                "backend": ["Node.js", "Express", "JWT"],
+                "database": ["MongoDB Atlas", "Mongoose"],
+                "ai_features": ["TensorFlow.js", "Recommendation Engine"]
+            },
+            "features": [
+                "🛍️ Full product catalog with search and filters",
+                "🤖 AI-powered personalized recommendations",
+                "🛒 Real-time shopping cart management",
+                "🔐 Secure user authentication with JWT",
+                "📦 Order tracking and history",
+                "🖼️ Satellite image classification for gems",
+                "☁️ Scalable MongoDB Atlas deployment"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "title": "Python e-Commerce Platform",
+        "icon": "🛒",
+        "summary": "Dynamic e-commerce platform with FastAPI, user authentication, product management, and Razorpay integration.",
+        "tech": ["Python", "FastAPI", "Razorpay", "SQLite", "Jinja2"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A full-featured e-commerce platform built with FastAPI and Python, featuring secure user authentication, comprehensive product management, and payment integration using Razorpay test mode. Deployed on Render for real-time functionality.",
+            "architecture": [
+                { "step": 1, "name": "FastAPI Backend", "description": "High-performance async API framework" },
+                { "step": 2, "name": "Jinja2 Templates", "description": "Server-side rendered product pages" },
+                { "step": 3, "name": "SQLite Database", "description": "Lightweight persistent storage" },
+                { "step": 4, "name": "Razorpay Integration", "description": "Secure payment processing" },
+                { "step": 5, "name": "Render Deployment", "description": "Cloud hosting with auto-scaling" }
+            ],
+            "schema": [
+                { "name": "Products", "icon": "📦", "description": "Product catalog with inventory" },
+                { "name": "Users", "icon": "👤", "description": "Customer accounts and auth" },
+                { "name": "Orders", "icon": "📋", "description": "Order management and status" },
+                { "name": "Payments", "icon": "💳", "description": "Razorpay transaction records" },
+                { "name": "Cart", "icon": "🛒", "description": "Session-based shopping cart" }
+            ],
+            "techStack": {
+                "backend": ["Python", "FastAPI", "Uvicorn", "Pydantic"],
+                "frontend": ["Jinja2", "HTML5", "CSS3", "JavaScript"],
+                "database": ["SQLite", "SQLAlchemy"],
+                "payments": ["Razorpay API", "Test Mode"],
+                "deployment": ["Render", "Gunicorn"]
+            },
+            "features": [
+                "🔐 Secure user authentication and sessions",
+                "📦 Complete product CRUD operations",
+                "🛒 Shopping cart with quantity management",
+                "💳 Razorpay payment integration (test mode)",
+                "📊 Order history and tracking",
+                "⚡ FastAPI async performance",
+                "🌐 Live deployment on Render"
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "title": "IoT Lighting System (Lytiva)",
+        "icon": "💡",
+        "summary": "MQTT-based Python integration for Lytiva lighting systems, enabling real-time control of 50+ zones.",
+        "tech": ["Python", "MQTT", "NestJS", "AWS EC2", "MySQL"],
+        "demoUrl": "#",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A comprehensive IoT solution developed at Chipbucket Solutions for Lytiva lighting systems. Built Python-based MQTT integration enabling real-time control of 50+ zones, with RESTful APIs supporting 1000+ device interactions monthly.",
+            "architecture": [
+                { "step": 1, "name": "Angular Frontend", "description": "Device configuration dashboard" },
+                { "step": 2, "name": "NestJS API", "description": "RESTful endpoints for device management" },
+                { "step": 3, "name": "MQTT Broker", "description": "Real-time message routing" },
+                { "step": 4, "name": "Python MQTT Client", "description": "Zone control and automation" },
+                { "step": 5, "name": "AWS EC2 + RDS", "description": "Cloud infrastructure with MySQL" }
+            ],
+            "schema": [
+                { "name": "Devices", "icon": "💡", "description": "Lighting devices and configurations" },
+                { "name": "Zones", "icon": "🏠", "description": "50+ controllable zones" },
+                { "name": "Schedules", "icon": "⏰", "description": "Automated lighting schedules" },
+                { "name": "Users", "icon": "👤", "description": "Device owners and permissions" },
+                { "name": "Logs", "icon": "📝", "description": "Device activity and analytics" }
+            ],
+            "techStack": {
+                "backend": ["NestJS", "TypeScript", "Python"],
+                "frontend": ["Angular", "TypeScript"],
+                "iot": ["MQTT", "Mosquitto", "Paho-MQTT"],
+                "database": ["MySQL RDS", "TypeORM"],
+                "cloud": ["AWS EC2", "AWS RDS", "CloudWatch"]
+            },
+            "features": [
+                "🔌 1000+ device interactions monthly",
+                "🏠 Real-time control of 50+ zones",
+                "📡 MQTT protocol for instant communication",
+                "⏰ Automated scheduling and scenes",
+                "📊 35% improvement in analytics queries",
+                "🛠️ 20% better code maintainability",
+                "⚡ 15% reduction in configuration time"
+            ]
+        }
+    }
+]
