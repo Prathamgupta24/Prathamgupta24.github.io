@@ -193,6 +193,52 @@ a:hover {
     padding: var(--space-lg);
     max-width: 600px;
     width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Holographic Background Image */
+.loader-holo-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    opacity: 0.4;
+    overflow: hidden;
+}
+
+.holo-avatar {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    animation: holoFloat 6s ease-in-out infinite, holoPulse 3s ease-in-out infinite;
+    filter: brightness(1.2) contrast(1.1);
+}
+
+@keyframes holoFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.02);
+    }
+}
+
+@keyframes holoPulse {
+    0%, 100% {
+        opacity: 0.4;
+        filter: brightness(1.2) contrast(1.1) hue-rotate(0deg);
+    }
+    50% {
+        opacity: 0.6;
+        filter: brightness(1.4) contrast(1.2) hue-rotate(10deg);
+    }
 }
 
 /* CRT Scanlines */

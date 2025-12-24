@@ -277,5 +277,87 @@
                 "⚡ 15% reduction in configuration time"
             ]
         }
+    },
+    {
+        "id": 7,
+        "title": "Ahmedabad Bus Tracker",
+        "icon": "🚌",
+        "summary": "Real-time, crowd-sourced bus arrival tracking platform with live map visualization for Ahmedabad city buses.",
+        "tech": ["Node.js", "Express", "MongoDB", "Leaflet.js", "OpenStreetMap", "WebSocket"],
+        "demoUrl": "https://ahmedabad-bus-tracker.onrender.com",
+        "githubUrl": "#",
+        "details": {
+            "fullDescription": "A prototype platform designed for real-time, crowd-sourced bus arrival tracking with live map visualization. Users can report bus locations and view real-time updates on an interactive map, helping commuters track bus arrivals more accurately.",
+            "architecture": [
+                { "step": 1, "name": "Frontend", "description": "Interactive map interface using Leaflet.js and OpenStreetMap" },
+                { "step": 2, "name": "Backend API", "description": "Node.js and Express for RESTful API and WebSocket server" },
+                { "step": 3, "name": "Database", "description": "MongoDB for storing bus routes, stops, and user reports" },
+                { "step": 4, "name": "Real-time Updates", "description": "WebSocket-based communication for instant bus location updates" },
+                { "step": 5, "name": "Map Visualization", "description": "Live markers showing bus positions and routes on the map" }
+            ],
+            "schema": [
+                { "name": "BusRoutes", "icon": "🛣️", "description": "route_id, route_name, stops, schedule" },
+                { "name": "BusStops", "icon": "🚏", "description": "stop_id, stop_name, latitude, longitude" },
+                { "name": "UserReports", "icon": "📍", "description": "report_id, bus_number, location, timestamp, user_id" },
+                { "name": "LiveBuses", "icon": "🚌", "description": "bus_id, route, current_location, last_updated" }
+            ],
+            "techStack": {
+                "frontend": ["HTML5", "CSS3", "JavaScript", "Leaflet.js", "OpenStreetMap"],
+                "backend": ["Node.js", "Express", "Socket.IO"],
+                "database": ["MongoDB", "Mongoose"],
+                "realtime": ["WebSocket", "Socket.IO"]
+            },
+            "features": [
+                "🗺️ Interactive map with live bus location tracking",
+                "👥 Crowd-sourced bus arrival reports from users",
+                "⚡ Real-time updates using WebSocket communication",
+                "📍 Bus route and stop visualization on map",
+                "🔔 Instant notifications for bus arrivals",
+                "📱 Mobile-responsive design for on-the-go tracking",
+                "🚌 Support for multiple bus routes and stops",
+                "⏱️ Estimated arrival time calculations"
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "title": "AI-Powered PDF Interaction Platform",
+        "icon": "📄",
+        "summary": "Web application enabling users to upload PDFs, chat with their content, and generate AI-based summaries for improved document comprehension.",
+        "tech": ["FastAPI", "Python", "SQLAlchemy", "SQLite", "PyPDF2", "Hugging Face", "React"],
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/prathamgupta24",
+        "details": {
+            "fullDescription": "A web application that enables users to upload PDFs, chat with their content, and generate AI-based summaries. Uses Hugging Face Transformers (BART for summarization, DistilBERT for Q&A) to provide instant AI-driven insights, improving document comprehension and research efficiency.",
+            "architecture": [
+                { "step": 1, "name": "React Frontend", "description": "Modern UI for PDF upload, chat interface, and summary display" },
+                { "step": 2, "name": "FastAPI Backend", "description": "RESTful API for PDF processing and AI model integration" },
+                { "step": 3, "name": "PDF Processing", "description": "PyPDF2 for extracting text content from uploaded PDFs" },
+                { "step": 4, "name": "AI Models", "description": "BART for summarization, DistilBERT for question answering" },
+                { "step": 5, "name": "Database", "description": "SQLite with SQLAlchemy ORM for storing documents and conversations" }
+            ],
+            "schema": [
+                { "name": "Documents", "icon": "📄", "description": "doc_id, filename, file_path, upload_date, text_content" },
+                { "name": "Summaries", "icon": "📝", "description": "summary_id, doc_id, summary_text, created_at" },
+                { "name": "Conversations", "icon": "💬", "description": "conv_id, doc_id, question, answer, timestamp" },
+                { "name": "Users", "icon": "👤", "description": "user_id, username, email, created_at" }
+            ],
+            "techStack": {
+                "frontend": ["React", "TypeScript", "Tailwind CSS", "Axios"],
+                "backend": ["Python 3.9+", "FastAPI", "SQLAlchemy", "Pydantic"],
+                "ai_ml": ["Hugging Face Transformers", "BART", "DistilBERT", "PyPDF2"],
+                "database": ["SQLite", "SQLAlchemy ORM"]
+            },
+            "features": [
+                "📤 Upload and parse PDF documents",
+                "🤖 AI-powered summarization using BART model",
+                "💬 Interactive Q&A with document content using DistilBERT",
+                "📊 Conversation history tracking",
+                "🔍 Fast text search within documents",
+                "📱 Responsive design for mobile and desktop",
+                "⚡ Quick processing with efficient PDF parsing",
+                "💾 Persistent storage of documents and conversations"
+            ]
+        }
     }
 ]
